@@ -1,0 +1,11 @@
+{
+    "path": "/hello",
+    "httpMethod": "GET",
+    "requestContext": {
+        "authorizer": {
+            "claims": {
+                "sub": "c6cabfe7-82cb-4d73-9993-a1783c224e19"
+            }
+        }        
+    }
+  }

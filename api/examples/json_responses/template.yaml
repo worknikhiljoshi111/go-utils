@@ -1,0 +1,23 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  Example lambda implementations of API Gateway JSON responses
+
+Globals:
+  Function:
+    Handler: main
+    Runtime: go1.x
+    Timeout: 5
+
+Resources:
+  JSONGetFunction:
+    Properties:
+      CodeUri: ./lambda
+      Events:
+        Request:
+          Properties:
+            Method: GET
+            Path: /json
+          Type: Api
+      FunctionName: examples-json-responses
+    Type: AWS::Serverless::Function

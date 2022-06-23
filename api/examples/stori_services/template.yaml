@@ -1,0 +1,23 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  Example lambda implementations of Stori Services
+
+Globals:
+  Function:
+    Handler: main
+    Runtime: go1.x
+    Timeout: 5
+
+Resources:
+  ServicesFunction:
+    Properties:
+      CodeUri: ./lambda
+      Events:
+        Request:
+          Properties:
+            Method: GET
+            Path: /services
+          Type: Api
+      FunctionName: examples-services
+    Type: AWS::Serverless::Function
